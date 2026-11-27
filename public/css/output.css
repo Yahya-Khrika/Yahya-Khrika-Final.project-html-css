@@ -53,6 +53,7 @@
     --radius-xl: 0.75rem;
     --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -226,6 +227,15 @@
   .top-\[100\%\] {
     top: 100%;
   }
+  .right-0 {
+    right: 0px;
+  }
+  .right-5 {
+    right: calc(var(--spacing) * 5);
+  }
+  .right-10 {
+    right: calc(var(--spacing) * 10);
+  }
   .right-17 {
     right: calc(var(--spacing) * 17);
   }
@@ -237,6 +247,9 @@
   }
   .left-17 {
     left: calc(var(--spacing) * 17);
+  }
+  .left-47 {
+    left: calc(var(--spacing) * 47);
   }
   .z-10 {
     z-index: 10;
@@ -354,6 +367,9 @@
   .w-15 {
     width: calc(var(--spacing) * 15);
   }
+  .w-35 {
+    width: calc(var(--spacing) * 35);
+  }
   .w-40 {
     width: calc(var(--spacing) * 40);
   }
@@ -402,6 +418,9 @@
   .border-collapse {
     border-collapse: collapse;
   }
+  .transform {
+    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
+  }
   .cursor-pointer {
     cursor: pointer;
   }
@@ -428,6 +447,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .gap-0 {
+    gap: 0px;
   }
   .gap-1 {
     gap: var(--spacing);
@@ -878,6 +900,10 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
@@ -949,8 +975,26 @@
     .lg\:right-47 {
       right: calc(var(--spacing) * 47);
     }
+    .lg\:right-78 {
+      right: calc(var(--spacing) * 78);
+    }
+    .lg\:left-4 {
+      left: calc(var(--spacing) * 4);
+    }
     .lg\:left-47 {
       left: calc(var(--spacing) * 47);
+    }
+    .lg\:left-52 {
+      left: calc(var(--spacing) * 52);
+    }
+    .lg\:left-69 {
+      left: calc(var(--spacing) * 69);
+    }
+    .lg\:left-75 {
+      left: calc(var(--spacing) * 75);
+    }
+    .lg\:left-78 {
+      left: calc(var(--spacing) * 78);
     }
     .lg\:order-1 {
       order: 1;
@@ -969,6 +1013,9 @@
     }
     .lg\:w-35 {
       width: calc(var(--spacing) * 35);
+    }
+    .lg\:w-70 {
+      width: calc(var(--spacing) * 70);
     }
     .lg\:max-w-\[300px\] {
       max-width: 300px;
@@ -1002,6 +1049,9 @@
     }
     .lg\:gap-0 {
       gap: 0px;
+    }
+    .lg\:gap-5 {
+      gap: calc(var(--spacing) * 5);
     }
     .lg\:gap-10 {
       gap: calc(var(--spacing) * 10);
@@ -1057,6 +1107,26 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-border-style {
   syntax: "*";
@@ -1236,6 +1306,10 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-scale-x {
   syntax: "*";
   inherits: false;
@@ -1254,6 +1328,11 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: block))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
@@ -1294,6 +1373,7 @@
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
+      --tw-ease: initial;
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
