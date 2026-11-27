@@ -29,7 +29,6 @@ h1{
 
   font-size: 38px;
   font-weight: 800;
-  line-height: 1.1;
   color: black;
 }
 
@@ -39,8 +38,8 @@ h1{
   font-size: 18px;
   line-height: 1.7;
   color: #5b6677;
-  
   text-align: center;
+  
 }
 .circle {
     margin-top: 25px;
