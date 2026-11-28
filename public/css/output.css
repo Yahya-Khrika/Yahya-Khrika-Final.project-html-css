@@ -38,6 +38,7 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-xs: 20rem;
+    --container-md: 28rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
     --text-xs: 0.75rem;
@@ -363,6 +364,14 @@
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
   }
+  .size-7 {
+    width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 7);
+  }
+  .size-14 {
+    width: calc(var(--spacing) * 14);
+    height: calc(var(--spacing) * 14);
+  }
   .h-1 {
     height: var(--spacing);
   }
@@ -429,8 +438,14 @@
   .w-full {
     width: 100%;
   }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
   .max-w-xl {
     max-width: var(--container-xl);
+  }
+  .min-w-0 {
+    min-width: 0px;
   }
   .flex-1 {
     flex: 1;
@@ -549,11 +564,18 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
+  .rounded-t-full {
+    border-top-left-radius: calc(infinity * 1px);
+    border-top-right-radius: calc(infinity * 1px);
+  }
   .rounded-tl-3xl {
     border-top-left-radius: var(--radius-3xl);
   }
   .rounded-tl-4xl {
     border-top-left-radius: var(--radius-4xl);
+  }
+  .rounded-tl-\[2rem\] {
+    border-top-left-radius: 2rem;
   }
   .rounded-tl-\[50\%\] {
     border-top-left-radius: 50%;
@@ -601,11 +623,18 @@
     border-bottom-right-radius: 70%;
     border-bottom-left-radius: 70%;
   }
+  .rounded-b-lg {
+    border-bottom-right-radius: var(--radius-lg);
+    border-bottom-left-radius: var(--radius-lg);
+  }
   .rounded-br-3xl {
     border-bottom-right-radius: var(--radius-3xl);
   }
   .rounded-br-4xl {
     border-bottom-right-radius: var(--radius-4xl);
+  }
+  .rounded-br-\[2rem\] {
+    border-bottom-right-radius: 2rem;
   }
   .rounded-br-\[150px\] {
     border-bottom-right-radius: 150px;
@@ -624,6 +653,9 @@
   }
   .rounded-bl-lg {
     border-bottom-left-radius: var(--radius-lg);
+  }
+  .rounded-bl-md {
+    border-bottom-left-radius: var(--radius-md);
   }
   .rounded-bl-xs {
     border-bottom-left-radius: var(--radius-xs);
@@ -726,6 +758,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-green-600) 50%, transparent);
     }
+  }
+  .bg-orange-100 {
+    background-color: var(--color-orange-100);
   }
   .bg-orange-500 {
     background-color: var(--color-orange-500);
@@ -1017,6 +1052,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .uppercase {
+    text-transform: uppercase;
+  }
   .line-through {
     text-decoration-line: line-through;
   }
@@ -1093,6 +1131,12 @@
     :is(:where(.group):hover .group-hover\:translate-x-1) {
       --tw-translate-x: var(--spacing);
       translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+    :is(:where(.group):hover .group-hover\:bg-orange-500) {
+      background-color: var(--color-orange-500);
+    }
+    :is(:where(.group):hover .group-hover\:text-white) {
+      color: var(--color-white);
     }
     .hover\:-translate-y-1:hover {
       --tw-translate-y: calc(var(--spacing) * -1);
@@ -1271,6 +1315,9 @@
     .lg\:flex-3 {
       flex: 3;
     }
+    .lg\:flex-4 {
+      flex: 4;
+    }
     .lg\:flex-row {
       flex-direction: row;
     }
@@ -1295,6 +1342,9 @@
     .lg\:gap-0 {
       gap: 0px;
     }
+    .lg\:gap-1 {
+      gap: var(--spacing);
+    }
     .lg\:gap-2 {
       gap: calc(var(--spacing) * 2);
     }
@@ -1312,6 +1362,9 @@
     }
     .lg\:gap-16 {
       gap: calc(var(--spacing) * 16);
+    }
+    .lg\:gap-50 {
+      gap: calc(var(--spacing) * 50);
     }
     .lg\:gap-\[2rem\] {
       gap: 2rem;
